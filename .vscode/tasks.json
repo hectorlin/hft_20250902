@@ -1,0 +1,129 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-hft-server",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "-D_GNU_SOURCE",
+                "-D_POSIX_C_SOURCE=200809L",
+                "-DNDEBUG",
+                "-I${workspaceFolder}/inc",
+                "-I${workspaceFolder}/lib",
+                "-o",
+                "${workspaceFolder}/bin/hft_server",
+                "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/hft_server.cpp",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build HFT Server (Release)"
+        },
+        {
+            "label": "build-hft-server-debug",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-g",
+                "-O0",
+                "-Wall",
+                "-Wextra",
+                "-D_GNU_SOURCE",
+                "-D_POSIX_C_SOURCE=200809L",
+                "-DDEBUG",
+                "-I${workspaceFolder}/inc",
+                "-I${workspaceFolder}/lib",
+                "-o",
+                "${workspaceFolder}/bin/hft_server",
+                "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/hft_server.cpp",
+                "-lpthread"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build HFT Server (Debug)"
+        },
+        {
+            "label": "cleanup-debug",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "Debug session completed"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            },
+            "detail": "Cleanup after debug session"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-f",
+                "${workspaceFolder}/bin/hft_server"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "detail": "Clean build artifacts"
+        },
+        {
+            "label": "run-hft-server",
+            "type": "shell",
+            "command": "${workspaceFolder}/bin/hft_server",
+            "args": [
+                "--ip", "127.0.0.1",
+                "--port", "8888",
+                "--threads", "4"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "dependsOn": "build-hft-server",
+            "detail": "Run HFT Server"
+        }
+    ]
+}

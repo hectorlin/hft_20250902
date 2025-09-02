@@ -1,0 +1,106 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Remote Debug HFT Server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/hft_server",
+            "args": [
+                "--ip", "127.0.0.1",
+                "--port", "8888",
+                "--threads", "4"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "miDebuggerArgs": "",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-hft-server",
+            "postDebugTask": "cleanup-debug"
+        },
+        {
+            "name": "Remote Debug HFT Server (Custom Args)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/hft_server",
+            "args": [
+                "--ip", "0.0.0.0",
+                "--port", "9999",
+                "--threads", "8"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "miDebuggerArgs": "",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-hft-server-debug"
+        },
+        {
+            "name": "Attach to Remote HFT Server",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/bin/hft_server",
+            "processId": "${command:pickProcess}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "miDebuggerArgs": "",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug HFT Server (Local)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/hft_server",
+            "args": [
+                "--ip", "127.0.0.1",
+                "--port", "8888",
+                "--threads", "2"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "miDebuggerArgs": "",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-hft-server-debug"
+        }
+    ]
+}

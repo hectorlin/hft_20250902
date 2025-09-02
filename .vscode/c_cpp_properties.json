@@ -1,0 +1,59 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/inc",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/lib",
+                "/usr/include",
+                "/usr/local/include"
+               
+            ],
+            "defines": [
+                "_GNU_SOURCE",
+                "_POSIX_C_SOURCE=200809L",
+                "NDEBUG"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "/usr/include",
+                    "/usr/local/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            }
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/inc",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/lib"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "WIN32",
+                "_WIN32"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ]
+}
