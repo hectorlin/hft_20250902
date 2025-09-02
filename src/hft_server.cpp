@@ -1,5 +1,5 @@
 
-#include "./hft_server.h"
+#include "hft_server.h"
 
 #include <errno.h>
 #include <cstring>
@@ -244,7 +244,8 @@ void HFTServer::handle_client_events(int client_fd) {
         }
         
         // Process message - check for different message types
-        if (bytes_read >= sizeof(Message)) {
+        // Fix: Cast bytes_read to size_t to avoid signed/unsigned comparison warning
+        if (static_cast<size_t>(bytes_read) >= sizeof(Message)) {
             const Message* msg = reinterpret_cast<const Message*>(recv_buffer_.data());
             std::cout << "Processing message type: " << static_cast<int>(msg->message_type) 
                       << " size: " << bytes_read << " bytes" << std::endl;
@@ -253,7 +254,8 @@ void HFTServer::handle_client_events(int client_fd) {
             if (msg->message_type == MessageType::ORDER_NEW || 
                 msg->message_type == MessageType::ORDER_CANCEL || 
                 msg->message_type == MessageType::ORDER_REPLACE) {
-                if (bytes_read >= sizeof(OrderMessage)) {
+                // Fix: Cast bytes_read to size_t to avoid signed/unsigned comparison warning
+                if (static_cast<size_t>(bytes_read) >= sizeof(OrderMessage)) {
                     const OrderMessage* order_msg = reinterpret_cast<const OrderMessage*>(recv_buffer_.data());
                     process_client_message(*order_msg, *conn);
                 } else {
@@ -261,7 +263,8 @@ void HFTServer::handle_client_events(int client_fd) {
                               << sizeof(OrderMessage) << ")" << std::endl;
                 }
             } else if (msg->message_type == MessageType::MARKET_DATA) {
-                if (bytes_read >= sizeof(MarketDataMessage)) {
+                // Fix: Cast bytes_read to size_t to avoid signed/unsigned comparison warning
+                if (static_cast<size_t>(bytes_read) >= sizeof(MarketDataMessage)) {
                     const MarketDataMessage* market_msg = reinterpret_cast<const MarketDataMessage*>(recv_buffer_.data());
                     process_client_message(*market_msg, *conn);
                 } else {
@@ -466,7 +469,9 @@ void OrderService::on_connection_closed(Connection& conn) {
     conn.is_authenticated = false;
 }
 
+// Fix: Add (void) to suppress unused parameter warnings
 void OrderService::handle_new_order(const OrderMessage& order, Connection& conn) {
+    (void)conn; // Suppress unused parameter warning
     // Process new order (implement order matching logic here)
     // For now, just send confirmation
     Message response = order;
@@ -480,18 +485,26 @@ void OrderService::handle_new_order(const OrderMessage& order, Connection& conn)
               << " " << order.quantity << " @ " << order.price << std::endl;
 }
 
+// Fix: Add (void) to suppress unused parameter warnings
 void OrderService::handle_cancel_order(const Message& msg, Connection& conn) {
+    (void)msg;   // Suppress unused parameter warning
+    (void)conn;  // Suppress unused parameter warning
     // Handle order cancellation
     std::cout << "Cancel order received" << std::endl;
 }
 
+// Fix: Add (void) to suppress unused parameter warnings
 void OrderService::handle_replace_order(const Message& msg, Connection& conn) {
+    (void)msg;   // Suppress unused parameter warning
+    (void)conn;  // Suppress unused parameter warning
     // Handle order replacement
     std::cout << "Replace order received" << std::endl;
 }
 
 // MarketDataService implementation
+// Fix: Add (void) to suppress unused parameter warnings
 void MarketDataService::process_message(const Message& msg, Connection& conn) {
+    (void)conn; // Suppress unused parameter warning
     if (msg.message_type == MessageType::MARKET_DATA) {
         if (msg.payload_size >= sizeof(MarketDataMessage)) {
             const MarketDataMessage& data = *reinterpret_cast<const MarketDataMessage*>(&msg);
@@ -500,12 +513,16 @@ void MarketDataService::process_message(const Message& msg, Connection& conn) {
     }
 }
 
+// Fix: Add (void) to suppress unused parameter warnings
 void MarketDataService::on_connection_established(Connection& conn) {
+    (void)conn; // Suppress unused parameter warning
     // Send initial market data snapshot
     std::cout << "Market data connection established" << std::endl;
 }
 
+// Fix: Add (void) to suppress unused parameter warnings
 void MarketDataService::on_connection_closed(Connection& conn) {
+    (void)conn; // Suppress unused parameter warning
     std::cout << "Market data connection closed" << std::endl;
 }
 
@@ -515,4 +532,4 @@ void MarketDataService::broadcast_market_data(const MarketDataMessage& data) {
     std::cout << "Broadcasting market data for " << data.symbol.data() << std::endl;
 }
 
-} // namespace hft 
+} // namespace hft
