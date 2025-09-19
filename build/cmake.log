@@ -1,0 +1,7 @@
+-- Build type: 
+-- C++ standard: 17
+-- Compiler flags:  -O3 -march=native -mtune=native -Wall -Wextra -Wpedantic -funroll-loops -ffast-math
+-- Install prefix: /usr/local
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/fedora/hft_20250902/build

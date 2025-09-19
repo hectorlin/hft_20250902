@@ -1,0 +1,8 @@
+/home/fedora/hft_20250902/build/CMakeFiles/hft_server.dir
+/home/fedora/hft_20250902/build/CMakeFiles/latency_test_client.dir
+/home/fedora/hft_20250902/build/CMakeFiles/edit_cache.dir
+/home/fedora/hft_20250902/build/CMakeFiles/rebuild_cache.dir
+/home/fedora/hft_20250902/build/CMakeFiles/list_install_components.dir
+/home/fedora/hft_20250902/build/CMakeFiles/install.dir
+/home/fedora/hft_20250902/build/CMakeFiles/install/local.dir
+/home/fedora/hft_20250902/build/CMakeFiles/install/strip.dir

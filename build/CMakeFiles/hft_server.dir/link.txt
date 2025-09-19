@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -march=native -mtune=native -Wall -Wextra -Wpedantic -funroll-loops -ffast-math -Wl,--dependency-file=CMakeFiles/hft_server.dir/link.d CMakeFiles/hft_server.dir/src/main.cpp.o CMakeFiles/hft_server.dir/src/hft_server.cpp.o -o hft_server
