@@ -1,0 +1,25 @@
+=== HFT Latency Test Client ===
+Server: 127.0.0.1:8888
+Test type: burst
+===============================
+Connected to HFT server at 127.0.0.1:8888
+Running burst test...
+
+=== Burst Test ===
+Burst size: 100
+Number of bursts: 10
+Burst interval: 100ms
+=================
+
+Burst test completed in 931ms
+
+=== Latency Test Results ===
+Messages sent: 1000
+Messages received: 0
+Errors: 0
+Success rate: 0.00%
+=============================
+Disconnected from HFT server
+
+Latency test completed successfully!
+Disconnected from HFT server
