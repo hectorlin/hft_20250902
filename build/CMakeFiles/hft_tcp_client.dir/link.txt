@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -march=native -mtune=native -Wall -Wextra -Wpedantic -funroll-loops -ffast-math -Wl,--dependency-file=CMakeFiles/hft_tcp_client.dir/link.d CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client_test.cpp.o CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client.cpp.o -o hft_tcp_client

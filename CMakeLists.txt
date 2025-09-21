@@ -71,3 +71,26 @@ message(STATUS "Install prefix: ${CMAKE_INSTALL_PREFIX}")
 
 # Add compile commands for IDE support
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# Create HFT TCP Client executable
+add_executable(hft_tcp_client
+    src/hft_tcp_client_test.cpp
+    src/hft_tcp_client.cpp
+)
+
+# Link libraries for HFT TCP client
+target_link_libraries(hft_tcp_client
+    Threads::Threads
+)
+
+# Set target properties for HFT TCP client
+set_target_properties(hft_tcp_client PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED ON
+    CXX_EXTENSIONS OFF
+)
+
+# Installation rules for HFT TCP client
+install(TARGETS hft_tcp_client
+    RUNTIME DESTINATION bin
+)

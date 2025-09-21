@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/fedora/hft_20250902/inc
+CXX_INCLUDES = -I/home/wilson/Desktop/hft_20250902/inc
 
 CXX_FLAGS =  -O3 -march=native -mtune=native -Wall -Wextra -Wpedantic -funroll-loops -ffast-math -std=c++17
 

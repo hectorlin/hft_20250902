@@ -1,0 +1,8 @@
+=== HFT Simple Latency Test ===
+Messages: 10
+=============================
+
+=== HFT Latency Test ===
+Messages: 10
+Mode: Round-trip latency measurement
+===============================

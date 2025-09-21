@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/fedora/hft_20250902/src/hft_server.cpp" "CMakeFiles/hft_server.dir/src/hft_server.cpp.o" "gcc" "CMakeFiles/hft_server.dir/src/hft_server.cpp.o.d"
-  "/home/fedora/hft_20250902/src/main.cpp" "CMakeFiles/hft_server.dir/src/main.cpp.o" "gcc" "CMakeFiles/hft_server.dir/src/main.cpp.o.d"
+  "/home/wilson/Desktop/hft_20250902/src/hft_server.cpp" "CMakeFiles/hft_server.dir/src/hft_server.cpp.o" "gcc" "CMakeFiles/hft_server.dir/src/hft_server.cpp.o.d"
+  "/home/wilson/Desktop/hft_20250902/src/main.cpp" "CMakeFiles/hft_server.dir/src/main.cpp.o" "gcc" "CMakeFiles/hft_server.dir/src/main.cpp.o.d"
   "" "hft_server" "gcc" "CMakeFiles/hft_server.dir/link.d"
   )
 

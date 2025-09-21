@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fedora/hft_20250902
+CMAKE_SOURCE_DIR = /home/wilson/Desktop/hft_20250902
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fedora/hft_20250902/build
+CMAKE_BINARY_DIR = /home/wilson/Desktop/hft_20250902/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fedora/hft_20250902/build/CMakeFiles /home/fedora/hft_20250902/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wilson/Desktop/hft_20250902/build/CMakeFiles /home/wilson/Desktop/hft_20250902/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fedora/hft_20250902/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wilson/Desktop/hft_20250902/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -187,6 +187,19 @@ latency_test_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/latency_test_client.dir/build.make CMakeFiles/latency_test_client.dir/build
 .PHONY : latency_test_client/fast
 
+#=============================================================================
+# Target rules for targets named hft_tcp_client
+
+# Build rule for target.
+hft_tcp_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hft_tcp_client
+.PHONY : hft_tcp_client
+
+# fast build rule for target.
+hft_tcp_client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_tcp_client.dir/build.make CMakeFiles/hft_tcp_client.dir/build
+.PHONY : hft_tcp_client/fast
+
 src/hft_server.o: src/hft_server.cpp.o
 .PHONY : src/hft_server.o
 
@@ -210,6 +223,54 @@ src/hft_server.s: src/hft_server.cpp.s
 src/hft_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_server.dir/build.make CMakeFiles/hft_server.dir/src/hft_server.cpp.s
 .PHONY : src/hft_server.cpp.s
+
+src/hft_tcp_client.o: src/hft_tcp_client.cpp.o
+.PHONY : src/hft_tcp_client.o
+
+# target to build an object file
+src/hft_tcp_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_tcp_client.dir/build.make CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client.cpp.o
+.PHONY : src/hft_tcp_client.cpp.o
+
+src/hft_tcp_client.i: src/hft_tcp_client.cpp.i
+.PHONY : src/hft_tcp_client.i
+
+# target to preprocess a source file
+src/hft_tcp_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_tcp_client.dir/build.make CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client.cpp.i
+.PHONY : src/hft_tcp_client.cpp.i
+
+src/hft_tcp_client.s: src/hft_tcp_client.cpp.s
+.PHONY : src/hft_tcp_client.s
+
+# target to generate assembly for a file
+src/hft_tcp_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_tcp_client.dir/build.make CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client.cpp.s
+.PHONY : src/hft_tcp_client.cpp.s
+
+src/hft_tcp_client_test.o: src/hft_tcp_client_test.cpp.o
+.PHONY : src/hft_tcp_client_test.o
+
+# target to build an object file
+src/hft_tcp_client_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_tcp_client.dir/build.make CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client_test.cpp.o
+.PHONY : src/hft_tcp_client_test.cpp.o
+
+src/hft_tcp_client_test.i: src/hft_tcp_client_test.cpp.i
+.PHONY : src/hft_tcp_client_test.i
+
+# target to preprocess a source file
+src/hft_tcp_client_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_tcp_client.dir/build.make CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client_test.cpp.i
+.PHONY : src/hft_tcp_client_test.cpp.i
+
+src/hft_tcp_client_test.s: src/hft_tcp_client_test.cpp.s
+.PHONY : src/hft_tcp_client_test.s
+
+# target to generate assembly for a file
+src/hft_tcp_client_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hft_tcp_client.dir/build.make CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client_test.cpp.s
+.PHONY : src/hft_tcp_client_test.cpp.s
 
 src/latency_client.o: src/latency_client.cpp.o
 .PHONY : src/latency_client.o
@@ -296,10 +357,17 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... hft_server"
+	@echo "... hft_tcp_client"
 	@echo "... latency_test_client"
 	@echo "... src/hft_server.o"
 	@echo "... src/hft_server.i"
 	@echo "... src/hft_server.s"
+	@echo "... src/hft_tcp_client.o"
+	@echo "... src/hft_tcp_client.i"
+	@echo "... src/hft_tcp_client.s"
+	@echo "... src/hft_tcp_client_test.o"
+	@echo "... src/hft_tcp_client_test.i"
+	@echo "... src/hft_tcp_client_test.s"
 	@echo "... src/latency_client.o"
 	@echo "... src/latency_client.i"
 	@echo "... src/latency_client.s"

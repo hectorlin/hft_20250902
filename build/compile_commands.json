@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/wilson/Desktop/hft_20250902/build",
+  "command": "/usr/bin/c++  -I/home/wilson/Desktop/hft_20250902/inc  -O3 -march=native -mtune=native -Wall -Wextra -Wpedantic -funroll-loops -ffast-math -std=c++17 -o CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client_test.cpp.o -c /home/wilson/Desktop/hft_20250902/src/hft_tcp_client_test.cpp",
+  "file": "/home/wilson/Desktop/hft_20250902/src/hft_tcp_client_test.cpp",
+  "output": "CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client_test.cpp.o"
+},
+{
+  "directory": "/home/wilson/Desktop/hft_20250902/build",
+  "command": "/usr/bin/c++  -I/home/wilson/Desktop/hft_20250902/inc  -O3 -march=native -mtune=native -Wall -Wextra -Wpedantic -funroll-loops -ffast-math -std=c++17 -o CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client.cpp.o -c /home/wilson/Desktop/hft_20250902/src/hft_tcp_client.cpp",
+  "file": "/home/wilson/Desktop/hft_20250902/src/hft_tcp_client.cpp",
+  "output": "CMakeFiles/hft_tcp_client.dir/src/hft_tcp_client.cpp.o"
+}
+]
